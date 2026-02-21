@@ -1,15 +1,24 @@
-# Base image
+# Use JDK image
 FROM eclipse-temurin:21-jdk-alpine
 
-# Workdir
+# Set working directory
 WORKDIR /app
 
-# Copy pom + source
-COPY ./pom.xml ./ 
-COPY ./src ./src
+# Copy Maven wrapper and pom
+COPY pom.xml mvnw ./
+COPY .mvn/ .mvn/
+
+# Copy source code
+COPY src/ src/
+
+# Give execute permission to mvnw
+RUN chmod +x ./mvnw
 
 # Build the project
 RUN ./mvnw package -DskipTests
 
+# Expose port if needed (Spring Boot default)
+EXPOSE 8080
+
 # Run the jar
-CMD ["java", "-jar", "target/BookStore-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/BookStorebackend-0.0.1-SNAPSHOT.jar"]
