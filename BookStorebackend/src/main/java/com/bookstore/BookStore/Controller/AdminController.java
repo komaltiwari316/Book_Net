@@ -1,31 +1,3 @@
-//package com.bookstore.BookStore.Controller;
-//import com.bookstore.BookStore.DTO.LoginDTO;
-//import com.bookstore.BookStore.Services.AdminServices;
-//import com.bookstore.BookStore.UserModel.User;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.web.bind.annotation.*;
-//
-//@RestController
-//@RequestMapping("/admin")
-//public class AdminController {
-//    @Autowired
-//    private AdminServices adminservices;
-//
-//    @PostMapping("/signup")
-//    public User signup(@RequestBody User admin){
-//        return adminservices.createAdmin(admin);
-//    }
-//
-//    @PostMapping("/login")
-//    public User login(@RequestBody LoginDTO request){
-//        return adminservices.adminLogin(
-//                request.getEmail(),
-//                request.getPassword()
-//        );
-//    }
-//}
-
-
 package com.bookstore.BookStore.Controller;
 
 import com.bookstore.BookStore.DTO.LoginDTO;

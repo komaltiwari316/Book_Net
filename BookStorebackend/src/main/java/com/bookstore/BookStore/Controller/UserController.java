@@ -1,29 +1,3 @@
-//package com.bookstore.BookStore.Controller;
-//import com.bookstore.BookStore.Services.UserServices;
-//import com.bookstore.BookStore.UserModel.User;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Repository;
-//import org.springframework.web.bind.annotation.*;
-//
-//@RestController
-//@RequestMapping("/users")
-//@CrossOrigin(origins = "http://localhost:5175")
-//public class UserController {
-//    @Autowired
-//    private UserServices userservice;
-//
-//    @PostMapping("/Signup")
-//    public User AddUser(@RequestBody User user){
-//        return userservice.AddUser(user);
-//    }
-//
-//    @PostMapping("/login")
-//    public User Login(@RequestBody User user){
-//        return userservice.getUserByemail(user.getEmail());
-//    }
-//}
-
-
 package com.bookstore.BookStore.Controller;
 
 import com.bookstore.BookStore.Services.UserServices;
