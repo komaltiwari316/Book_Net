@@ -11,13 +11,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users")
-@CrossOrigin(origins = "https://book-net-five.vercel.app")
+@CrossOrigin(origins = "https://book-net-five.vercel.app/")
 public class UserController {
 
     @Autowired
     private UserServices userservice;
 
-    // Signup
+    // Signup 
     @PostMapping("/signup")
     public ResponseEntity<?> AddUser(@RequestBody User user){
         try {
