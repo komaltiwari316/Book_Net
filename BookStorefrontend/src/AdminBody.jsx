@@ -201,7 +201,7 @@ const AddBooks = () => {
       formData.append("category", category);
       formData.append("image", image);
 
-      const res = await axios.post("http://localhost:8080/books/add", formData, {
+      const res = await axios.post("https://book-net-4.onrender.com/books/add", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         }
@@ -306,7 +306,7 @@ const btn = {
 const DeleteBooks = () => {
   const [books, setbooks] = useState([]);
   const [loading, setloading] = useState(true);
-  
+
 
   useEffect(() => {
     fetchBook();
@@ -314,7 +314,7 @@ const DeleteBooks = () => {
 
   const fetchBook = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/books/all");
+      const res = await axios.get("https://book-net-4.onrender.com/books/all");
       setbooks(res.data)
       setloading(false);
     } catch (error) {
@@ -325,7 +325,7 @@ const DeleteBooks = () => {
 
   const HandleDelete = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:8080/books/delete/${id}`)
+      const res = await axios.delete(`https://book-net-4.onrender.com/books/delete/${id}`)
       alert("books deleted succefully")
       fetchBook();
     } catch (error) {
@@ -366,8 +366,8 @@ const DeleteBooks = () => {
                   <td style={td}>{book.category}</td>
                   <td style={td}>
                     {book.image ? (
-                      <img src={`http://localhost:8080/uploads/${encodeURIComponent(book.image)}`} alt={book.title} style={{ width: "50px", height: "50px" }} />
-                    ):(
+                      <img src={`https://book-net-4.onrender.com/uploads/${encodeURIComponent(book.image)}`} alt={book.title} style={{ width: "50px", height: "50px" }} />
+                    ) : (
                       <span>No image</span>
                     )}
                   </td>
@@ -410,7 +410,7 @@ const UpdateBooks = () => {
 
   const fetchBook = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/books/all");
+      const res = await axios.get("https://book-net-4.onrender.com/books/all");
       setbooks(res.data)
       setloading(false);
     } catch (error) {
@@ -439,7 +439,7 @@ const UpdateBooks = () => {
       if (image) {
         formData.append("image", image);
       }
-      await axios.put(`http://localhost:8080/books/update/${selected.id}`, formData, {
+      await axios.put(`https://book-net-4.onrender.com/books/update/${selected.id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data"
         }
@@ -485,7 +485,7 @@ const UpdateBooks = () => {
                       {book.image && book.image.trim() !== "" ? (
                         <img
                           key={book.image}
-                          src={`http://localhost:8080/uploads/${encodeURIComponent(book.image)}`}
+                          src={`https://book-net-4.onrender.com/uploads/${encodeURIComponent(book.image)}`}
                           width="50"
                           alt="book"
                           onError={(e) => {
@@ -500,7 +500,7 @@ const UpdateBooks = () => {
                       <button
                         type="button"
                         onClick={() => Handleselect(book)}
-                        style={updatebtn} 
+                        style={updatebtn}
                       >
                         Update
                       </button>
@@ -591,7 +591,7 @@ const AllBooks = ({ category, search }) => {
 
   const fetchBook = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/books/all");
+      const res = await axios.get("https://book-net-4.onrender.com/books/all");
       setbooks(res.data);
     } catch (error) {
       console.log("failed to fetch books", error);
@@ -650,7 +650,7 @@ const AllBooks = ({ category, search }) => {
                 <th style={th}>Author</th>
                 <th style={th}>Price</th>
                 <th style={th}>Category</th>
-                <th style={th}>Image</th>  
+                <th style={th}>Image</th>
               </tr>
             </thead>
             <tbody>
@@ -662,8 +662,8 @@ const AllBooks = ({ category, search }) => {
                   <td style={td}>{book.category}</td>
                   <td style={td}>
                     {book.image ? (
-                      <img 
-                        src={`http://localhost:8080/uploads/${encodeURIComponent(book.image)}`}
+                      <img
+                        src={`https://book-net-4.onrender.com/uploads/${encodeURIComponent(book.image)}`}
                         alt="book"
                         width="40"
                       />
@@ -814,7 +814,7 @@ const Orders = () => {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/orders/all");
+      const res = await axios.get("https://book-net-4.onrender.com/orders/all");
       setOrders(res.data);
       setLoading(false);
     } catch (error) {
@@ -901,7 +901,7 @@ const Users = () => {
 
   const fetchBook = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/users/allusers");
+      const res = await axios.get("https://book-net-4.onrender.com/users/allusers");
       setbooks(res.data)
       setloading(false);
     } catch (error) {
