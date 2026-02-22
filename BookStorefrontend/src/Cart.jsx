@@ -14,13 +14,7 @@ const Cart = () => {
 
   const saveCart = (cart) => {
     const user = JSON.parse(localStorage.getItem("user"))
-    if (!user) return
-
-    // const cartKey = `cart_${user.id}`
-    // localStorage.setItem(cartKey, JSON.stringify(cart))
-    // window.dispatchEvent(new Event("cartUpdated"))
-
-    // const userId = user.id 
+    if (!user) return 
     const cartkey = `cart_${user.id}`
     localStorage.setItem(cartkey, JSON.stringify(cart))
   }
@@ -83,7 +77,7 @@ const Cart = () => {
     }
 
     try {
-      await axios.post("http://localhost:8080/orders/place", orderData)
+      await axios.post("https://book-net-6.onrender.com/orders/place", orderData)
       alert("order placed successfully")
 
     } catch (error) {

@@ -14,7 +14,7 @@ const Sign = () => {
   const HandleSignup = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://book-net-4.onrender.com/users/signup", {
+      const res = await axios.post("https://book-net-6.onrender.com/users/signup", {
         fullName,
         email,
         password,
