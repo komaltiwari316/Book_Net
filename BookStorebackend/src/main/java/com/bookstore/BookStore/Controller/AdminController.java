@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/admin")
-@CrossOrigin(origins = "https://book-net-vhhi.vercel.app/")
+@CrossOrigin(origins = "https://book-net-y9rj.vercel.app/")
 public class AdminController {
 
     @Autowired

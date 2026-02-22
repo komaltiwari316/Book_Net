@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users")
-@CrossOrigin(origins = "https://book-net-vhhi.vercel.app/")
+@CrossOrigin(origins = "https://book-net-y9rj.vercel.app/")
 public class UserController {
 
     @Autowired
